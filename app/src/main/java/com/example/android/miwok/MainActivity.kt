@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main)
 
@@ -43,12 +42,6 @@ class MainActivity : AppCompatActivity() {
             else -> Log.e("ClickHandler", "Nothing was clicked")
         }
     }
-//
-//    fun openNumbersList(view: View) {
-//        var i = Intent(this, NumbersActivity::class.java)
-//        var b: Intent = Intent(this, )
-//        startActivity(i)
-//    }
 
     fun sendIntent(activity: KClass<*>) {
             var i = Intent(this, activity.java)
