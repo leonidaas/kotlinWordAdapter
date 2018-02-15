@@ -15,7 +15,7 @@ open class MediaPlayerActivity : AppCompatActivity() {
 
     var audioManager: AudioManager? = null
 
-    var audioFocusChangeListener = AudioManager.OnAudioFocusChangeListener() {
+    var audioFocusChangeListener = AudioManager.OnAudioFocusChangeListener {
 
          @Override
          fun onAudioFocusChange(focusChange: Int) {

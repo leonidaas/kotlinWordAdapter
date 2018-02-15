@@ -27,7 +27,7 @@ class WordAdapter (context: Activity, words: ArrayList<Word>, val colorBackgroun
             listItemView = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false )
         }
 
-        var text_container = listItemView?.findViewById(R.id.text_container) as LinearLayout
+        var text_container = listItemView?.findViewById(R.id.text_container) as RelativeLayout
         val color: Int = ContextCompat.getColor(context, colorBackground)
         text_container.setBackgroundColor(color)
 

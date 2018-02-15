@@ -2,6 +2,8 @@ package com.example.android.miwok
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.NavUtils
+import android.view.MenuItem
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.word_list.*
 
@@ -11,11 +13,10 @@ class NumbersActivity : MediaPlayerActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.word_list)
+        //actionBar.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val words: ArrayList<Word> = ArrayList()
-
-
-
 
         words.add(Word(R.drawable.number_one, "one", "lutti", R.raw.number_one))
         words.add(Word(R.drawable.number_two, "two", "ottiko", R.raw.number_two))
@@ -36,9 +37,14 @@ class NumbersActivity : MediaPlayerActivity() {
             this.playSoundFile(it.getAudio())
         }
 
+    }
 
-
-
+    @Override
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            android.R.id.home -> {NavUtils.navigateUpFromSameTask(this); return true }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 
